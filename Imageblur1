@@ -1,31 +1,27 @@
- class Image 
+  class Image 
 
     def initialize(numbers)
-     
-      @images << Image.new(1)
-
+      @images = []
+      @images = numbers
+      
     end
 
-   def output
-      @images.each do |image| 
-        image.output_image
+    def output_image
+          @images.each do |row|
+             row.each  do |num|
+                print "#{num}"
+              end
+              puts ""
         end
     end
-
-
-    def numbers
-        @numbers
-    end
-
-    
 end
+        
 
- image = Image.new([
-  [0, 0, 0, 0],
-  [0, 1, 0, 0],
-  [0, 0, 0, 1],
-  [0, 0, 0, 0]
-])
-puts image
-image.output_image
-puts image.numbers
+image = Image.new([
+    [0, 0, 0, 0],
+    [0, 1, 0, 0],
+    [0, 0, 0, 1],
+    [0, 0, 0, 0]
+    ])
+
+image.output_image 
