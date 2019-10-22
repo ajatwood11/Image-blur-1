@@ -15,9 +15,11 @@ class Image
         end
     end
 
-    def blur(distance = 1)
-      distance.times do
-        blur_image
+    def blur(distance)
+      @distance = gets.chomp.to_i
+      @distance.times do
+        blur_image.each do |y_row, x_num|
+        end
       end
     end
 
@@ -50,16 +52,32 @@ class Image
     end
   end
 end
-
+distance = @distance 
 
 
 
 
   image = Image.new([
-    [0, 0, 0, 0],
-    [0, 1, 0, 0],
-    [0, 0, 0, 1],
-    [0, 0, 0, 0]
-    ])
-image.blur
-image.output_image 
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 1, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 1],
+])
+  
+puts "Original Image"
+  image.output_image 
+puts ""
+puts "What distance would you like?"
+image.blur(distance)
+image.output_image
